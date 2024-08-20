@@ -539,7 +539,7 @@
                 
                 $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray());
                 print("user_ids_for_seven_days");
-                print_r(user_ids_for_seven_days);
+                print_r($user_ids_for_seven_days);
 
                 foreach($user_ids_for_seven_days as $id){
                     $notification                   = new PushNotification;
@@ -566,7 +566,7 @@
                 $exact_day_date = Carbon::now()->format('Y-m-d');
                 $user_ids_for_exact_day = array_unique(Period::whereDate('period_start', $exact_day_date)->pluck("user_id")->toArray());
                 print("user_ids_for_exact_day");
-                print_r(user_ids_for_exact_day);
+                print_r($user_ids_for_exact_day);
 
                 foreach($user_ids_for_exact_day as $id){
                     $notification                   = new PushNotification;
@@ -593,8 +593,8 @@
                 $three_days_date_om              = Carbon::now()->addDays(3)->format('Y-m-d');
                 $user_ids_for_three_days_date_om = array_unique(Period::whereDate('ovlution_start', $three_days_date_om)->pluck("user_id")->toArray());
                 print("user_ids_for_three_days_date_om");
-                print_r(user_ids_for_three_days_date_om);
-                
+                print_r($user_ids_for_three_days_date_om);
+
                 foreach($user_ids_for_three_days_date_om as $id){
                     $notification                   = new PushNotification;
                     $notification->title            = "Ovulation begins in 3 days";
