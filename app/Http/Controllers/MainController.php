@@ -539,7 +539,7 @@
                 print($seven_days_date);
                 // $user_ids_for_seven_days = User::pluck('id')->toArray();
                 
-                $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray());
+                $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("period_start")->toArray());
                 print("user_ids_for_seven_days");
                 print_r($user_ids_for_seven_days);
 
