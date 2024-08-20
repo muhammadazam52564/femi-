@@ -537,7 +537,7 @@
                 $seven_days_date = Carbon::now()->addDays(7)->format('Y-m-d');
                 print("seven_days_date");
                 print($seven_days_date);
-                $user_ids_for_seven_days = Period::firnt();
+                $user_ids_for_seven_days = Period::first();
 
                 dd($user_ids_for_seven_days);
                 
