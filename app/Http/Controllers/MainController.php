@@ -534,7 +534,7 @@
                 $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
                 $user_ids = User::pluck('id')->toArray();
 
-                $seven_days_date = Carbon::now()->addDays(7)->format('Y-m-d');
+                $seven_days_date = Carbon::now()->addDays(8)->format('Y-m-d');
                 print($seven_days_date);
                 
                 $user_ids_for_seven_days = Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray();
