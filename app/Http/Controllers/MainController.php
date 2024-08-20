@@ -538,7 +538,6 @@
                 print($seven_days_date);
                 
                 $user_ids_for_seven_days = Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray();
-                return $user_ids_for_seven_days;
 
                 foreach($user_ids_for_seven_days as $id){
                     $notification                   = new PushNotification;
