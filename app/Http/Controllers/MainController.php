@@ -562,6 +562,7 @@
                 }
 
                 $exact_day_date = Carbon::now()->format('Y-m-d');
+                print($exact_day_date);
                 $user_ids_for_exact_day = array_unique(Period::whereDate('period_start', $exact_day_date)->pluck("user_id")->toArray());
                 print("user_ids_for_exact_day");
                 print_r($user_ids_for_exact_day);
