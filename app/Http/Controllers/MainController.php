@@ -535,15 +535,10 @@
                 $user_ids = User::pluck('id')->toArray();
 
                 $seven_days_date = Carbon::now()->addDays(7)->format('Y-m-d');
-                print("seven_days_date");
                 print($seven_days_date);
-                $user_ids_for_seven_days = Period::get();
-
-                return $user_ids_for_seven_days;
                 
-                // $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray());
-                print("user_ids_for_seven_days");
-                print_r($user_ids_for_seven_days);
+                $user_ids_for_seven_days = Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray();
+                return $user_ids_for_seven_days;
 
                 foreach($user_ids_for_seven_days as $id){
                     $notification                   = new PushNotification;
