@@ -536,10 +536,10 @@
 
                 $seven_days_date = Carbon::now()->addDays(7)->format('Y-m-d');
                 print("seven_days_date");
-                print($seven_days_date);
-                // $user_ids_for_seven_days = User::pluck('id')->toArray();
+                print($seven_days_date)
+                $user_ids_for_seven_days = User::pluck('id')->get();
                 
-                $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("period_start")->toArray());
+                // $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray());
                 print("user_ids_for_seven_days");
                 print_r($user_ids_for_seven_days);
 
