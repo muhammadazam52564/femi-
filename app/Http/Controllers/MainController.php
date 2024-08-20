@@ -560,78 +560,78 @@
                     ]);
                 }
 
-                // $exact_day_date = Carbon::now()->format('Y-m-d');
-                // $user_ids_for_exact_day = array_unique(Period::whereDate('period_start', $exact_day_date)->pluck("user_id")->toArray());
-                // foreach($user_ids_for_exact_day as $id){
-                //     $notification                   = new PushNotification;
-                //     $notification->title            = "Your period starts today";
-                //     $notification->description      = "Your period is starting, use the Femi App to help you get through it calmly. ";
-                //     $notification->type             = "7days";
-                //     $notification->user_id          = $id;
-                //     $notification->save();
+                $exact_day_date = Carbon::now()->format('Y-m-d');
+                $user_ids_for_exact_day = array_unique(Period::whereDate('period_start', $exact_day_date)->pluck("user_id")->toArray());
+                foreach($user_ids_for_exact_day as $id){
+                    $notification                   = new PushNotification;
+                    $notification->title            = "Your period starts today";
+                    $notification->description      = "Your period is starting, use the Femi App to help you get through it calmly. ";
+                    $notification->type             = "7days";
+                    $notification->user_id          = $id;
+                    $notification->save();
 
-                //     $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
-                //     $response = Http::withHeaders([
-                //         'Content-Type' => 'application/json',
-                //         'Authorization' => $server_key
-                //     ])->post('https://fcm.googleapis.com/fcm/send', [
-                //         'to'            => User::find($id)->token,
-                //         'priority'      => 'high',
-                //         'notification'  => [
-                //         'title'         => "Your period starts today",
-                //         'body'          => "Your period is starting, use the Femi App to help you get through it calmly. "
-                //         ]
-                //     ]);
-                // }
+                    $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
+                    $response = Http::withHeaders([
+                        'Content-Type' => 'application/json',
+                        'Authorization' => $server_key
+                    ])->post('https://fcm.googleapis.com/fcm/send', [
+                        'to'            => User::find($id)->token,
+                        'priority'      => 'high',
+                        'notification'  => [
+                        'title'         => "Your period starts today",
+                        'body'          => "Your period is starting, use the Femi App to help you get through it calmly. "
+                        ]
+                    ]);
+                }
 
-                // $three_days_date_om              = Carbon::now()->addDays(3)->format('Y-m-d');
-                // $user_ids_for_three_days_date_om = array_unique(Period::whereDate('ovlution_start', $three_days_date_om)->pluck("user_id")->toArray());
+                $three_days_date_om              = Carbon::now()->addDays(3)->format('Y-m-d');
+                $user_ids_for_three_days_date_om = array_unique(Period::whereDate('ovlution_start', $three_days_date_om)->pluck("user_id")->toArray());
                 
-                // foreach($user_ids_for_three_days_date_om as $id){
-                //     $notification                   = new PushNotification;
-                //     $notification->title            = "Ovulation begins in 3 days";
-                //     $notification->description      = "If you are family planning, get ready for ovulation in 3 days.";
-                //     $notification->type             = "7days";
-                //     $notification->user_id          = $id;
-                //     $notification->save();
+                foreach($user_ids_for_three_days_date_om as $id){
+                    $notification                   = new PushNotification;
+                    $notification->title            = "Ovulation begins in 3 days";
+                    $notification->description      = "If you are family planning, get ready for ovulation in 3 days.";
+                    $notification->type             = "7days";
+                    $notification->user_id          = $id;
+                    $notification->save();
 
-                //     $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
-                //     $response = Http::withHeaders([
-                //         'Content-Type' => 'application/json',
-                //         'Authorization' => $server_key
-                //     ])->post('https://fcm.googleapis.com/fcm/send', [
-                //         'to'            => User::find($id)->token,
-                //         'priority'      => 'high',
-                //         'notification'  => [
-                //         'title'         => "Ovulation begins in 3 days ",
-                //         'body'          => "If you are family planning, get ready for ovulation in 3 days."
-                //         ]
-                //     ]);
-                // }
+                    $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
+                    $response = Http::withHeaders([
+                        'Content-Type' => 'application/json',
+                        'Authorization' => $server_key
+                    ])->post('https://fcm.googleapis.com/fcm/send', [
+                        'to'            => User::find($id)->token,
+                        'priority'      => 'high',
+                        'notification'  => [
+                        'title'         => "Ovulation begins in 3 days ",
+                        'body'          => "If you are family planning, get ready for ovulation in 3 days."
+                        ]
+                    ]);
+                }
 
-                // if( Carbon::now()->format('l') == 1 || Carbon::now()->format('l') == 15 ){
-                //     foreach($user_ids as $id){
-                //         $notification                   = new PushNotification;
-                //         $notification->title            = "Get prepared for you period ";
-                //         $notification->description      = "Order you Femi Secrets Products now to prepare for your period. ";
-                //         $notification->type             = "7days";
-                //         $notification->user_id          = $id;
-                //         $notification->save();
+                if( Carbon::now()->format('l') == 1 || Carbon::now()->format('l') == 15 ){
+                    foreach($user_ids as $id){
+                        $notification                   = new PushNotification;
+                        $notification->title            = "Get prepared for you period ";
+                        $notification->description      = "Order you Femi Secrets Products now to prepare for your period. ";
+                        $notification->type             = "7days";
+                        $notification->user_id          = $id;
+                        $notification->save();
 
-                //         $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
-                //         $response = Http::withHeaders([
-                //             'Content-Type' => 'application/json',
-                //             'Authorization' => $server_key
-                //         ])->post('https://fcm.googleapis.com/fcm/send', [
-                //             'to'            => User::find($id)->token,
-                //             'priority'      => 'high',
-                //             'notification'  => [
-                //             'title'         => "Get prepared for you period  ",
-                //             'body'          => "Order you Femi Secrets Products now to prepare for your period. "
-                //             ]
-                //         ]);
-                //     }
-                // }
+                        $server_key = "key=AAAAnhAwszk:APA91bEsYv4uiL9cZe_-x_ACoVlnEzx4ohIxKD6S05wq4l2ufdzNQqDOhB2iebljhMyVbhwT5Z-cY_dsVZsV0DH5Ks6QAC783c2V92XIm34weNfnWgwiQWD2j4iJ0osqSOs-80vQ5JOX";
+                        $response = Http::withHeaders([
+                            'Content-Type' => 'application/json',
+                            'Authorization' => $server_key
+                        ])->post('https://fcm.googleapis.com/fcm/send', [
+                            'to'            => User::find($id)->token,
+                            'priority'      => 'high',
+                            'notification'  => [
+                            'title'         => "Get prepared for you period  ",
+                            'body'          => "Order you Femi Secrets Products now to prepare for your period. "
+                            ]
+                        ]);
+                    }
+                }
 
 
 
