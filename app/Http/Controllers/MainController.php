@@ -535,6 +535,8 @@
                 $user_ids = User::pluck('id')->toArray();
 
                 $seven_days_date = Carbon::now()->addDays(7)->format('Y-m-d');
+                print("seven_days_date");
+                print($seven_days_date);
                 // $user_ids_for_seven_days = User::pluck('id')->toArray();
                 
                 $user_ids_for_seven_days = array_unique(Period::whereDate('period_start', $seven_days_date)->pluck("user_id")->toArray());
